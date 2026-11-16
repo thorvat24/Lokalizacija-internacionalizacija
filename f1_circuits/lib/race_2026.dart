@@ -1,0 +1,27 @@
+/// Grand Prix rounds in the order of the revised 2026 calendar.
+/// https://www.formula1.com/en/racing/2026
+enum Race2026 {
+  australia,
+  china,
+  japan,
+  miami,
+  canada,
+  monaco,
+  barcelona,
+  austria,
+  greatBritain,
+  belgium,
+  hungary,
+  netherlands,
+  italy,
+  spain,
+  azerbaijan,
+  bahrain,
+  singapore,
+  unitedStates,
+  mexicoCity,
+  saoPaulo,
+  lasVegas,
+  qatar,
+  abuDhabi,
+}

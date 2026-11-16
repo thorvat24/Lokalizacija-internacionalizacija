@@ -1,10 +1,11 @@
 import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
+import 'package:f1_circuits/race_2026.dart';
 import 'package:material_ui/material_ui.dart';
 
-void main() => runApp(const F1CalendarDemo());
+void main() => runApp(const F1CircuitsApp());
 
-class F1CalendarDemo extends StatelessWidget {
-  const F1CalendarDemo({super.key});
+class F1CircuitsApp extends StatelessWidget {
+  const F1CircuitsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,58 +16,33 @@ class F1CalendarDemo extends StatelessWidget {
         ...GlobalMaterialLocalizations.delegates,
       ],
       onGenerateTitle: (context) => AppLocalizations.of(context)!.title,
-      home: Builder(
-        builder: (appContext) {
-          final messages = AppLocalizations.of(appContext)!;
-          const ticketCategories = ['generalAdmission', 'grandstand', 'vip'];
-          final raceDay = DateTime(2026, 11, 21);
+      home: const RaceListPage(),
+    );
+  }
+}
 
-          Widget raceCalendar() {
-            return CalendarDatePicker(
-              initialDate: raceDay,
-              firstDate: DateTime(2026, 11, 1),
-              lastDate: DateTime(2026, 11, 30),
-              onDateChanged: (_) {},
+class RaceListPage extends StatelessWidget {
+  const RaceListPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final messages = AppLocalizations.of(context)!;
+
+    return Scaffold(
+      appBar: AppBar(title: Text(messages.title)),
+      body: SafeArea(
+        child: ListView.separated(
+          itemCount: Race2026.values.length,
+          separatorBuilder: (context, index) => const Divider(height: 1),
+          itemBuilder: (context, index) {
+            final race = Race2026.values[index];
+
+            return ListTile(
+              title: Text(messages.raceName(race.name)),
+              subtitle: Text(messages.circuitName(race.name)),
             );
-          }
-
-          return Scaffold(
-            appBar: AppBar(title: Text(messages.title)),
-            body: SafeArea(
-              child: ListView(
-                padding: const EdgeInsets.all(16),
-                children: [
-                  Text(Localizations.localeOf(appContext).toLanguageTag()),
-                  raceCalendar(),
-                  const Divider(),
-                  Localizations.override(
-                    context: appContext,
-                    locale: const Locale('ja', 'JP'),
-                    child: Builder(
-                      builder: (calendarContext) {
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              Localizations.localeOf(calendarContext)
-                                  .toLanguageTag(),
-                            ),
-                            raceCalendar(),
-                          ],
-                        );
-                      },
-                    ),
-                  ),
-                  const Divider(),
-                  Text(messages.raceAtCircuit(messages.lasVegasCircuitName)),
-                  Text(messages.ticketCategoryCount(ticketCategories.length)),
-                  for (final category in ticketCategories)
-                    Text(messages.ticketCategory(category)),
-                ],
-              ),
-            ),
-          );
-        },
+          },
+        ),
       ),
     );
   }

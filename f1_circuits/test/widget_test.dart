@@ -1,9 +1,51 @@
 import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
+import 'package:f1_circuits/docs_demo/calendar_demo.dart';
 import 'package:f1_circuits/main.dart';
+import 'package:f1_circuits/race_2026.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
 void main() {
+  testWidgets('shows the 2026 rounds and circuits in official calendar order', (
+    tester,
+  ) async {
+    final dispatcher = tester.binding.platformDispatcher;
+    dispatcher.localesTestValue = const [Locale('en')];
+    addTearDown(dispatcher.clearLocalesTestValue);
+
+    await tester.pumpWidget(const F1CircuitsApp());
+    await tester.pumpAndSettle();
+
+    expect(find.text('Australian Grand Prix'), findsOneWidget);
+    expect(find.text('Albert Park Grand Prix Circuit'), findsOneWidget);
+    expect(Race2026.values, hasLength(23));
+
+    for (final title in [
+      'Bahrain Grand Prix in Malaysia',
+      'Las Vegas Grand Prix',
+      'Qatar Grand Prix',
+      'Abu Dhabi Grand Prix',
+    ]) {
+      final race = find.text(title);
+      await tester.scrollUntilVisible(race, 250);
+      expect(race, findsOneWidget);
+    }
+    expect(find.text('Yas Marina Circuit'), findsOneWidget);
+  });
+
+  testWidgets('localizes race names on a Croatian device', (tester) async {
+    final dispatcher = tester.binding.platformDispatcher;
+    dispatcher.localesTestValue = const [Locale('hr', 'HR')];
+    addTearDown(dispatcher.clearLocalesTestValue);
+
+    await tester.pumpWidget(const F1CircuitsApp());
+    await tester.pumpAndSettle();
+
+    expect(find.text('F1 staze 2026'), findsOneWidget);
+    expect(find.text('Velika nagrada Australije'), findsOneWidget);
+    expect(find.text('Albert Park Grand Prix Circuit'), findsOneWidget);
+  });
+
   testWidgets('uses English as a fallback and localizes the second calendar', (
     tester,
   ) async {
@@ -25,7 +67,7 @@ void main() {
 
     final messages = AppLocalizations.of(englishCalendar)!;
     expect(
-      messages.raceAtCircuit(messages.lasVegasCircuitName),
+      messages.raceAtCircuit(messages.circuitName(Race2026.lasVegas.name)),
       'Race at Las Vegas Strip Circuit',
     );
     expect(messages.ticketCategoryCount(1), '1 ticket category');

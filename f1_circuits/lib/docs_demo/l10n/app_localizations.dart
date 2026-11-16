@@ -104,11 +104,17 @@ abstract class AppLocalizations {
   /// **'F1 Circuits 2026'**
   String get title;
 
-  /// No description provided for @lasVegasCircuitName.
+  /// Grand Prix name for a race in the 2026 season.
   ///
   /// In en, this message translates to:
-  /// **'Las Vegas Strip Circuit'**
-  String get lasVegasCircuitName;
+  /// **'{raceId, select, australia{Australian Grand Prix} china{Chinese Grand Prix} japan{Japanese Grand Prix} miami{Miami Grand Prix} canada{Canadian Grand Prix} monaco{Monaco Grand Prix} barcelona{Barcelona-Catalunya Grand Prix} austria{Austrian Grand Prix} greatBritain{British Grand Prix} belgium{Belgian Grand Prix} hungary{Hungarian Grand Prix} netherlands{Dutch Grand Prix} italy{Italian Grand Prix} spain{Spanish Grand Prix} azerbaijan{Azerbaijan Grand Prix} bahrain{Bahrain Grand Prix in Malaysia} singapore{Singapore Grand Prix} unitedStates{United States Grand Prix} mexicoCity{Mexico City Grand Prix} saoPaulo{São Paulo Grand Prix} lasVegas{Las Vegas Grand Prix} qatar{Qatar Grand Prix} abuDhabi{Abu Dhabi Grand Prix} other{Unknown race}}'**
+  String raceName(String raceId);
+
+  /// Circuit that hosts the given race in the 2026 season.
+  ///
+  /// In en, this message translates to:
+  /// **'{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Unknown circuit}}'**
+  String circuitName(String raceId);
 
   /// Heading that includes the name of the circuit.
   ///
