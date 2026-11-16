@@ -1,0 +1,21 @@
+{
+  "@@locale": "ja",
+  "title": "F1サーキット 2026",
+  "raceName": "{raceId, select, australia{オーストラリアGP} china{中国GP} japan{日本GP} miami{マイアミGP} canada{カナダGP} monaco{モナコGP} barcelona{バルセロナ・カタルーニャGP} austria{オーストリアGP} greatBritain{イギリスGP} belgium{ベルギーGP} hungary{ハンガリーGP} netherlands{オランダGP} italy{イタリアGP} spain{スペインGP} azerbaijan{アゼルバイジャンGP} bahrain{バーレーン（マレーシア開催）GP} singapore{シンガポールGP} unitedStates{アメリカGP} mexicoCity{メキシコシティGP} saoPaulo{サンパウロGP} lasVegas{ラスベガスGP} qatar{カタールGP} abuDhabi{アブダビGP} other{不明なレース}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{不明なサーキット}}",
+  "raceAtCircuit": "{circuitName}でのレース",
+  "ticketCategoryCount": "{count, plural, =0{チケット区分はありません} other{{count}種類のチケット}}",
+  "ticketCategory": "{category, select, generalAdmission{自由観戦エリア} grandstand{グランドスタンド} vip{VIP} other{その他のチケット区分}}",
+  "raceFilter": "{filter, select, past{過去のレース} upcoming{今後のレース} other{すべて}}",
+  "raceResultCount": "{count, plural, =0{レースはありません} other{{count}件のレース}}",
+  "circuitLabel": "サーキット",
+  "raceDateUtcLabel": "決勝日 (UTC)",
+  "raceStartUtcLabel": "決勝開始時刻 (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "表示地域",
+  "displayRegionName": "{region, select, raceRegion{開催地の地域} germany{ドイツ語} czechia{チェコ} english{英語（イギリス）} other{端末の地域}}",
+  "raceDateLabel": "決勝日",
+  "raceStartLabel": "決勝開始時刻",
+  "raceTimeWithZone": "{time} ({zone})"
+}

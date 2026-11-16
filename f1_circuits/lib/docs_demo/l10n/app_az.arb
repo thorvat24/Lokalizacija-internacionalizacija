@@ -1,0 +1,21 @@
+{
+  "@@locale": "az",
+  "title": "F1 trasları 2026",
+  "raceName": "{raceId, select, australia{Avstraliya Qran Prisi} china{Çin Qran Prisi} japan{Yaponiya Qran Prisi} miami{Mayami Qran Prisi} canada{Kanada Qran Prisi} monaco{Monako Qran Prisi} barcelona{Barselona-Kataloniya Qran Prisi} austria{Avstriya Qran Prisi} greatBritain{Böyük Britaniya Qran Prisi} belgium{Belçika Qran Prisi} hungary{Macarıstan Qran Prisi} netherlands{Niderland Qran Prisi} italy{İtaliya Qran Prisi} spain{İspaniya Qran Prisi} azerbaijan{Azərbaycan Qran Prisi} bahrain{Bəhreyn Qran Prisi (Malayziyada)} singapore{Sinqapur Qran Prisi} unitedStates{ABŞ Qran Prisi} mexicoCity{Mexiko Qran Prisi} saoPaulo{San-Paulu Qran Prisi} lasVegas{Las-Veqas Qran Prisi} qatar{Qətər Qran Prisi} abuDhabi{Əbu-Dabi Qran Prisi} other{Naməlum yarış}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Naməlum tras}}",
+  "raceAtCircuit": "Yarışın keçirildiyi tras: {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{Bilet kateqoriyası yoxdur} other{{count} bilet kateqoriyası}}",
+  "ticketCategory": "{category, select, generalAdmission{Ümumi giriş} grandstand{Tribuna} vip{VIP} other{Digər bilet kateqoriyası}}",
+  "raceFilter": "{filter, select, past{Keçmiş} upcoming{Qarşıdakı} other{Hamısı}}",
+  "raceResultCount": "{count, plural, =0{Yarış yoxdur} other{{count} yarış}}",
+  "circuitLabel": "Tras",
+  "raceDateUtcLabel": "Yarışın tarixi (UTC)",
+  "raceStartUtcLabel": "Yarışın başlanğıcı (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "Göstərilən region",
+  "displayRegionName": "{region, select, raceRegion{Trasın regionu} germany{Alman dili} czechia{Çexiya} english{İngilis dili (Birləşmiş Krallıq)} other{Mənim regionum}}",
+  "raceDateLabel": "Yarışın tarixi",
+  "raceStartLabel": "Yarışın başlanğıcı",
+  "raceTimeWithZone": "{time} ({zone})"
+}

@@ -12,5 +12,10 @@
   "raceDateUtcLabel": "Datum utrke (UTC)",
   "raceStartUtcLabel": "Početak utrke (UTC)",
   "raceDateValue": "{date}",
-  "raceTimeValue": "{time}"
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "Regija prikaza",
+  "displayRegionName": "{region, select, raceRegion{Regija utrke} germany{Njemački} czechia{Češka} english{Engleski (UK)} other{Moja regija}}",
+  "raceDateLabel": "Datum utrke",
+  "raceStartLabel": "Početak utrke",
+  "raceTimeWithZone": "{time} ({zone})"
 }

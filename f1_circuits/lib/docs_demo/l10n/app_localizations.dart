@@ -5,8 +5,21 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_ar.dart';
+import 'app_localizations_az.dart';
+import 'app_localizations_cs.dart';
+import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
+import 'app_localizations_es.dart';
+import 'app_localizations_fr.dart';
 import 'app_localizations_hr.dart';
+import 'app_localizations_hu.dart';
+import 'app_localizations_it.dart';
+import 'app_localizations_ja.dart';
+import 'app_localizations_ms.dart';
+import 'app_localizations_nl.dart';
+import 'app_localizations_pt.dart';
+import 'app_localizations_zh.dart';
 
 // ignore_for_file: type=lint
 
@@ -95,7 +108,20 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('en'),
+    Locale('ar'),
+    Locale('az'),
+    Locale('cs'),
+    Locale('de'),
+    Locale('es'),
+    Locale('fr'),
     Locale('hr'),
+    Locale('hu'),
+    Locale('it'),
+    Locale('ja'),
+    Locale('ms'),
+    Locale('nl'),
+    Locale('pt'),
+    Locale('zh'),
   ];
 
   /// No description provided for @title.
@@ -175,6 +201,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{time}'**
   String raceTimeValue(DateTime time);
+
+  /// No description provided for @displayRegionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Display region'**
+  String get displayRegionLabel;
+
+  /// Name of a display region in the language of the interface.
+  ///
+  /// In en, this message translates to:
+  /// **'{region, select, raceRegion{Race region} germany{German} czechia{Czechia} english{English (UK)} other{My region}}'**
+  String displayRegionName(String region);
+
+  /// No description provided for @raceDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Race date'**
+  String get raceDateLabel;
+
+  /// No description provided for @raceStartLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Race start'**
+  String get raceStartLabel;
+
+  /// Already formatted local time followed by its time-zone abbreviation.
+  ///
+  /// In en, this message translates to:
+  /// **'{time} ({zone})'**
+  String raceTimeWithZone(String time, String zone);
 }
 
 class _AppLocalizationsDelegate
@@ -187,8 +243,23 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['en', 'hr'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+    'ar',
+    'az',
+    'cs',
+    'de',
+    'en',
+    'es',
+    'fr',
+    'hr',
+    'hu',
+    'it',
+    'ja',
+    'ms',
+    'nl',
+    'pt',
+    'zh',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -197,10 +268,36 @@ class _AppLocalizationsDelegate
 AppLocalizations lookupAppLocalizations(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'ar':
+      return AppLocalizationsAr();
+    case 'az':
+      return AppLocalizationsAz();
+    case 'cs':
+      return AppLocalizationsCs();
+    case 'de':
+      return AppLocalizationsDe();
     case 'en':
       return AppLocalizationsEn();
+    case 'es':
+      return AppLocalizationsEs();
+    case 'fr':
+      return AppLocalizationsFr();
     case 'hr':
       return AppLocalizationsHr();
+    case 'hu':
+      return AppLocalizationsHu();
+    case 'it':
+      return AppLocalizationsIt();
+    case 'ja':
+      return AppLocalizationsJa();
+    case 'ms':
+      return AppLocalizationsMs();
+    case 'nl':
+      return AppLocalizationsNl();
+    case 'pt':
+      return AppLocalizationsPt();
+    case 'zh':
+      return AppLocalizationsZh();
   }
 
   throw FlutterError(

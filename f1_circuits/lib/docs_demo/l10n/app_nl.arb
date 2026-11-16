@@ -1,0 +1,21 @@
+{
+  "@@locale": "nl",
+  "title": "F1-circuits 2026",
+  "raceName": "{raceId, select, australia{Grand Prix van Australië} china{Grand Prix van China} japan{Grand Prix van Japan} miami{Grand Prix van Miami} canada{Grand Prix van Canada} monaco{Grand Prix van Monaco} barcelona{Grand Prix van Barcelona-Catalonië} austria{Grand Prix van Oostenrijk} greatBritain{Grand Prix van Groot-Brittannië} belgium{Grand Prix van België} hungary{Grand Prix van Hongarije} netherlands{Grand Prix van Nederland} italy{Grand Prix van Italië} spain{Grand Prix van Spanje} azerbaijan{Grand Prix van Azerbeidzjan} bahrain{Grand Prix van Bahrein in Maleisië} singapore{Grand Prix van Singapore} unitedStates{Grand Prix van de Verenigde Staten} mexicoCity{Grand Prix van Mexico-Stad} saoPaulo{Grand Prix van São Paulo} lasVegas{Grand Prix van Las Vegas} qatar{Grand Prix van Qatar} abuDhabi{Grand Prix van Abu Dhabi} other{Onbekende race}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Onbekend circuit}}",
+  "raceAtCircuit": "Race op {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{Geen ticketcategorieën} one{{count} ticketcategorie} other{{count} ticketcategorieën}}",
+  "ticketCategory": "{category, select, generalAdmission{Algemene toegang} grandstand{Tribune} vip{VIP} other{Andere ticketcategorie}}",
+  "raceFilter": "{filter, select, past{Voorbij} upcoming{Aankomend} other{Alle}}",
+  "raceResultCount": "{count, plural, =0{Geen races} one{{count} race} other{{count} races}}",
+  "circuitLabel": "Circuit",
+  "raceDateUtcLabel": "Racedatum (UTC)",
+  "raceStartUtcLabel": "Start van de race (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "Weergaveregio",
+  "displayRegionName": "{region, select, raceRegion{Regio van het circuit} germany{Duits} czechia{Tsjechië} english{Engels (VK)} other{Mijn regio}}",
+  "raceDateLabel": "Racedatum",
+  "raceStartLabel": "Start van de race",
+  "raceTimeWithZone": "{time} ({zone})"
+}

@@ -1,0 +1,21 @@
+{
+  "@@locale": "it",
+  "title": "Circuiti di F1 2026",
+  "raceName": "{raceId, select, australia{Gran Premio d’Australia} china{Gran Premio di Cina} japan{Gran Premio del Giappone} miami{Gran Premio di Miami} canada{Gran Premio del Canada} monaco{Gran Premio di Monaco} barcelona{Gran Premio di Barcellona-Catalogna} austria{Gran Premio d’Austria} greatBritain{Gran Premio di Gran Bretagna} belgium{Gran Premio del Belgio} hungary{Gran Premio d’Ungheria} netherlands{Gran Premio dei Paesi Bassi} italy{Gran Premio d’Italia} spain{Gran Premio di Spagna} azerbaijan{Gran Premio dell’Azerbaigian} bahrain{Gran Premio del Bahrein in Malesia} singapore{Gran Premio di Singapore} unitedStates{Gran Premio degli Stati Uniti} mexicoCity{Gran Premio di Città del Messico} saoPaulo{Gran Premio di San Paolo} lasVegas{Gran Premio di Las Vegas} qatar{Gran Premio del Qatar} abuDhabi{Gran Premio di Abu Dhabi} other{Gara sconosciuta}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Circuito sconosciuto}}",
+  "raceAtCircuit": "Gara sul circuito {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{Nessuna categoria di biglietti} one{{count} categoria di biglietti} other{{count} categorie di biglietti}}",
+  "ticketCategory": "{category, select, generalAdmission{Ingresso generale} grandstand{Tribuna} vip{VIP} other{Altra categoria di biglietti}}",
+  "raceFilter": "{filter, select, past{Passate} upcoming{In programma} other{Tutte}}",
+  "raceResultCount": "{count, plural, =0{Nessuna gara} one{{count} gara} other{{count} gare}}",
+  "circuitLabel": "Circuito",
+  "raceDateUtcLabel": "Data della gara (UTC)",
+  "raceStartUtcLabel": "Partenza della gara (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "Regione di visualizzazione",
+  "displayRegionName": "{region, select, raceRegion{Regione del circuito} germany{Tedesco} czechia{Cechia} english{Inglese (Regno Unito)} other{La mia regione}}",
+  "raceDateLabel": "Data della gara",
+  "raceStartLabel": "Partenza della gara",
+  "raceTimeWithZone": "{time} ({zone})"
+}

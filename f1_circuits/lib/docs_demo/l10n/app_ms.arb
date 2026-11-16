@@ -1,0 +1,21 @@
+{
+  "@@locale": "ms",
+  "title": "Litar F1 2026",
+  "raceName": "{raceId, select, australia{Grand Prix Australia} china{Grand Prix China} japan{Grand Prix Jepun} miami{Grand Prix Miami} canada{Grand Prix Kanada} monaco{Grand Prix Monaco} barcelona{Grand Prix Barcelona-Catalunya} austria{Grand Prix Austria} greatBritain{Grand Prix Britain} belgium{Grand Prix Belgium} hungary{Grand Prix Hungary} netherlands{Grand Prix Belanda} italy{Grand Prix Itali} spain{Grand Prix Sepanyol} azerbaijan{Grand Prix Azerbaijan} bahrain{Grand Prix Bahrain di Malaysia} singapore{Grand Prix Singapura} unitedStates{Grand Prix Amerika Syarikat} mexicoCity{Grand Prix Bandar Raya Mexico} saoPaulo{Grand Prix São Paulo} lasVegas{Grand Prix Las Vegas} qatar{Grand Prix Qatar} abuDhabi{Grand Prix Abu Dhabi} other{Perlumbaan tidak diketahui}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Litar tidak diketahui}}",
+  "raceAtCircuit": "Perlumbaan di litar {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{Tiada kategori tiket} other{{count} kategori tiket}}",
+  "ticketCategory": "{category, select, generalAdmission{Kemasukan umum} grandstand{Tempat duduk grandstand} vip{VIP} other{Kategori tiket lain}}",
+  "raceFilter": "{filter, select, past{Lepas} upcoming{Akan datang} other{Semua}}",
+  "raceResultCount": "{count, plural, =0{Tiada perlumbaan} other{{count} perlumbaan}}",
+  "circuitLabel": "Litar",
+  "raceDateUtcLabel": "Tarikh perlumbaan (UTC)",
+  "raceStartUtcLabel": "Masa mula perlumbaan (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "Rantau paparan",
+  "displayRegionName": "{region, select, raceRegion{Rantau litar} germany{Bahasa Jerman} czechia{Czechia} english{Bahasa Inggeris (UK)} other{Rantau saya}}",
+  "raceDateLabel": "Tarikh perlumbaan",
+  "raceStartLabel": "Masa mula perlumbaan",
+  "raceTimeWithZone": "{time} ({zone})"
+}

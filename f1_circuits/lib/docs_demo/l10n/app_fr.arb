@@ -1,0 +1,21 @@
+{
+  "@@locale": "fr",
+  "title": "Circuits de F1 2026",
+  "raceName": "{raceId, select, australia{Grand Prix d’Australie} china{Grand Prix de Chine} japan{Grand Prix du Japon} miami{Grand Prix de Miami} canada{Grand Prix du Canada} monaco{Grand Prix de Monaco} barcelona{Grand Prix de Barcelone-Catalogne} austria{Grand Prix d’Autriche} greatBritain{Grand Prix de Grande-Bretagne} belgium{Grand Prix de Belgique} hungary{Grand Prix de Hongrie} netherlands{Grand Prix des Pays-Bas} italy{Grand Prix d’Italie} spain{Grand Prix d’Espagne} azerbaijan{Grand Prix d’Azerbaïdjan} bahrain{Grand Prix de Bahreïn en Malaisie} singapore{Grand Prix de Singapour} unitedStates{Grand Prix des États-Unis} mexicoCity{Grand Prix de Mexico} saoPaulo{Grand Prix de São Paulo} lasVegas{Grand Prix de Las Vegas} qatar{Grand Prix du Qatar} abuDhabi{Grand Prix d’Abou Dabi} other{Course inconnue}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Circuit inconnu}}",
+  "raceAtCircuit": "Course sur le circuit {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{Aucune catégorie de billets} one{{count} catégorie de billets} other{{count} catégories de billets}}",
+  "ticketCategory": "{category, select, generalAdmission{Admission générale} grandstand{Tribune} vip{VIP} other{Autre catégorie de billets}}",
+  "raceFilter": "{filter, select, past{Passées} upcoming{À venir} other{Toutes}}",
+  "raceResultCount": "{count, plural, =0{Aucune course} one{{count} course} other{{count} courses}}",
+  "circuitLabel": "Circuit",
+  "raceDateUtcLabel": "Date de la course (UTC)",
+  "raceStartUtcLabel": "Départ de la course (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "Région d’affichage",
+  "displayRegionName": "{region, select, raceRegion{Région du circuit} germany{Allemand} czechia{Tchéquie} english{Anglais (Royaume-Uni)} other{Ma région}}",
+  "raceDateLabel": "Date de la course",
+  "raceStartLabel": "Départ de la course",
+  "raceTimeWithZone": "{time} ({zone})"
+}

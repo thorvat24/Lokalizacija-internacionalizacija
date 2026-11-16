@@ -1,0 +1,21 @@
+{
+  "@@locale": "hu",
+  "title": "F1-es pályák 2026",
+  "raceName": "{raceId, select, australia{Ausztrál Nagydíj} china{Kínai Nagydíj} japan{Japán Nagydíj} miami{Miami Nagydíj} canada{Kanadai Nagydíj} monaco{Monacói Nagydíj} barcelona{Barcelona–katalóniai Nagydíj} austria{Osztrák Nagydíj} greatBritain{Brit Nagydíj} belgium{Belga Nagydíj} hungary{Magyar Nagydíj} netherlands{Holland Nagydíj} italy{Olasz Nagydíj} spain{Spanyol Nagydíj} azerbaijan{Azerbajdzsáni Nagydíj} bahrain{Bahreini Nagydíj (Malajziában)} singapore{Szingapúri Nagydíj} unitedStates{Egyesült Államok Nagydíj} mexicoCity{Mexikóvárosi Nagydíj} saoPaulo{São Pauló-i Nagydíj} lasVegas{Las Vegas-i Nagydíj} qatar{Katari Nagydíj} abuDhabi{Abu-dzabi Nagydíj} other{Ismeretlen futam}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Ismeretlen versenypálya}}",
+  "raceAtCircuit": "Futam a következő pályán: {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{Nincs jegykategória} other{{count} jegykategória}}",
+  "ticketCategory": "{category, select, generalAdmission{Általános belépő} grandstand{Tribün} vip{VIP} other{Egyéb jegykategória}}",
+  "raceFilter": "{filter, select, past{Korábbi} upcoming{Közelgő} other{Összes}}",
+  "raceResultCount": "{count, plural, =0{Nincs futam} other{{count} futam}}",
+  "circuitLabel": "Versenypálya",
+  "raceDateUtcLabel": "A futam dátuma (UTC)",
+  "raceStartUtcLabel": "A futam rajtja (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "Megjelenítési régió",
+  "displayRegionName": "{region, select, raceRegion{A versenypálya régiója} germany{Német} czechia{Csehország} english{Angol (Egyesült Királyság)} other{Saját régió}}",
+  "raceDateLabel": "A futam dátuma",
+  "raceStartLabel": "A futam rajtja",
+  "raceTimeWithZone": "{time} ({zone})"
+}

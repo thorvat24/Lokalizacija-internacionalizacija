@@ -1,0 +1,21 @@
+{
+  "@@locale": "cs",
+  "title": "Okruhy F1 2026",
+  "raceName": "{raceId, select, australia{Velká cena Austrálie} china{Velká cena Číny} japan{Velká cena Japonska} miami{Velká cena Miami} canada{Velká cena Kanady} monaco{Velká cena Monaka} barcelona{Velká cena Barcelony-Katalánska} austria{Velká cena Rakouska} greatBritain{Velká cena Velké Británie} belgium{Velká cena Belgie} hungary{Velká cena Maďarska} netherlands{Velká cena Nizozemska} italy{Velká cena Itálie} spain{Velká cena Španělska} azerbaijan{Velká cena Ázerbájdžánu} bahrain{Velká cena Bahrajnu v Malajsii} singapore{Velká cena Singapuru} unitedStates{Velká cena USA} mexicoCity{Velká cena Mexico City} saoPaulo{Velká cena São Paula} lasVegas{Velká cena Las Vegas} qatar{Velká cena Kataru} abuDhabi{Velká cena Abú Zabí} other{Neznámý závod}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Neznámý okruh}}",
+  "raceAtCircuit": "Závod na okruhu {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{Žádné kategorie vstupenek} one{{count} kategorie vstupenek} few{{count} kategorie vstupenek} other{{count} kategorií vstupenek}}",
+  "ticketCategory": "{category, select, generalAdmission{Všeobecný vstup} grandstand{Tribuna} vip{VIP} other{Jiná kategorie vstupenek}}",
+  "raceFilter": "{filter, select, past{Uplynulé} upcoming{Nadcházející} other{Všechny}}",
+  "raceResultCount": "{count, plural, =0{Žádné závody} one{{count} závod} few{{count} závody} other{{count} závodů}}",
+  "circuitLabel": "Okruh",
+  "raceDateUtcLabel": "Datum závodu (UTC)",
+  "raceStartUtcLabel": "Start závodu (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "Oblast zobrazení",
+  "displayRegionName": "{region, select, raceRegion{Oblast okruhu} czechia{Česko} english{Angličtina (Spojené království)} germany{Němčina} other{Moje oblast}}",
+  "raceDateLabel": "Datum závodu",
+  "raceStartLabel": "Start závodu",
+  "raceTimeWithZone": "{time} ({zone})"
+}

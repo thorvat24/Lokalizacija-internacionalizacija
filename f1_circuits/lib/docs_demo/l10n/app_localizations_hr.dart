@@ -150,4 +150,30 @@ class AppLocalizationsHr extends AppLocalizations {
 
     return '$timeString';
   }
+
+  @override
+  String get displayRegionLabel => 'Regija prikaza';
+
+  @override
+  String displayRegionName(String region) {
+    String _temp0 = intl.Intl.selectLogic(region, {
+      'raceRegion': 'Regija utrke',
+      'germany': 'Njemački',
+      'czechia': 'Češka',
+      'english': 'Engleski (UK)',
+      'other': 'Moja regija',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get raceDateLabel => 'Datum utrke';
+
+  @override
+  String get raceStartLabel => 'Početak utrke';
+
+  @override
+  String raceTimeWithZone(String time, String zone) {
+    return '$time ($zone)';
+  }
 }

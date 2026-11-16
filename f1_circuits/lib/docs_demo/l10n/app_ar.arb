@@ -1,0 +1,21 @@
+{
+  "@@locale": "ar",
+  "title": "حلبات فورمولا 1 لعام 2026",
+  "raceName": "{raceId, select, australia{جائزة أستراليا الكبرى} china{جائزة الصين الكبرى} japan{جائزة اليابان الكبرى} miami{جائزة ميامي الكبرى} canada{جائزة كندا الكبرى} monaco{جائزة موناكو الكبرى} barcelona{جائزة برشلونة-كاتالونيا الكبرى} austria{جائزة النمسا الكبرى} greatBritain{جائزة بريطانيا الكبرى} belgium{جائزة بلجيكا الكبرى} hungary{جائزة المجر الكبرى} netherlands{جائزة هولندا الكبرى} italy{جائزة إيطاليا الكبرى} spain{جائزة إسبانيا الكبرى} azerbaijan{جائزة أذربيجان الكبرى} bahrain{جائزة البحرين الكبرى في ماليزيا} singapore{جائزة سنغافورة الكبرى} unitedStates{جائزة الولايات المتحدة الكبرى} mexicoCity{جائزة مدينة مكسيكو الكبرى} saoPaulo{جائزة ساو باولو الكبرى} lasVegas{جائزة لاس فيغاس الكبرى} qatar{جائزة قطر الكبرى} abuDhabi{جائزة أبوظبي الكبرى} other{سباق غير معروف}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{حلبة غير معروفة}}",
+  "raceAtCircuit": "السباق على حلبة {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{لا توجد فئات تذاكر} one{فئة تذاكر واحدة} two{فئتا تذاكر} few{{count} فئات تذاكر} many{{count} فئة تذاكر} other{{count} فئة تذاكر}}",
+  "ticketCategory": "{category, select, generalAdmission{دخول عام} grandstand{مقاعد المدرجات} vip{كبار الشخصيات} other{فئة تذاكر أخرى}}",
+  "raceFilter": "{filter, select, past{السابقة} upcoming{القادمة} other{الكل}}",
+  "raceResultCount": "{count, plural, =0{لا توجد سباقات} one{سباق واحد} two{سباقان} few{{count} سباقات} many{{count} سباقًا} other{{count} سباق}}",
+  "circuitLabel": "الحلبة",
+  "raceDateUtcLabel": "تاريخ السباق (UTC)",
+  "raceStartUtcLabel": "موعد انطلاق السباق (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "منطقة العرض",
+  "displayRegionName": "{region, select, raceRegion{منطقة الحلبة} germany{الألمانية} czechia{التشيك} english{الإنجليزية (المملكة المتحدة)} other{منطقتي}}",
+  "raceDateLabel": "تاريخ السباق",
+  "raceStartLabel": "موعد انطلاق السباق",
+  "raceTimeWithZone": "{time} ({zone})"
+}

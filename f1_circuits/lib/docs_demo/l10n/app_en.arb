@@ -87,5 +87,29 @@
         "format": "jm"
       }
     }
+  },
+  "displayRegionLabel": "Display region",
+  "displayRegionName": "{region, select, raceRegion{Race region} germany{German} czechia{Czechia} english{English (UK)} other{My region}}",
+  "@displayRegionName": {
+    "description": "Name of a display region in the language of the interface.",
+    "placeholders": {
+      "region": {
+        "type": "String"
+      }
+    }
+  },
+  "raceDateLabel": "Race date",
+  "raceStartLabel": "Race start",
+  "raceTimeWithZone": "{time} ({zone})",
+  "@raceTimeWithZone": {
+    "description": "Already formatted local time followed by its time-zone abbreviation.",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "zone": {
+        "type": "String"
+      }
+    }
   }
 }

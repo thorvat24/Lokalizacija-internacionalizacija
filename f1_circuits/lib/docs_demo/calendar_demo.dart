@@ -21,6 +21,7 @@ class F1CalendarDemo extends StatelessWidget {
           final messages = AppLocalizations.of(appContext)!;
           const ticketCategories = ['generalAdmission', 'grandstand', 'vip'];
           final raceDay = DateTime(2026, 11, 21);
+          final startUtc = Race2026.lasVegas.startUtc;
 
           Widget raceCalendar() {
             return CalendarDatePicker(
@@ -67,6 +68,14 @@ class F1CalendarDemo extends StatelessWidget {
                   Text(messages.ticketCategoryCount(ticketCategories.length)),
                   for (final category in ticketCategories)
                     Text(messages.ticketCategory(category)),
+                  ListTile(
+                    title: Text(messages.raceDateUtcLabel),
+                    subtitle: Text(messages.raceDateValue(startUtc)),
+                  ),
+                  ListTile(
+                    title: Text(messages.raceStartUtcLabel),
+                    subtitle: Text(messages.raceTimeValue(startUtc)),
+                  ),
                 ],
               ),
             ),

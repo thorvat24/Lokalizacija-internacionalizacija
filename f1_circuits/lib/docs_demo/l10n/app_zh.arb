@@ -1,0 +1,21 @@
+{
+  "@@locale": "zh",
+  "title": "F1 赛道 2026",
+  "raceName": "{raceId, select, australia{澳大利亚大奖赛} china{中国大奖赛} japan{日本大奖赛} miami{迈阿密大奖赛} canada{加拿大大奖赛} monaco{摩纳哥大奖赛} barcelona{巴塞罗那-加泰罗尼亚大奖赛} austria{奥地利大奖赛} greatBritain{英国大奖赛} belgium{比利时大奖赛} hungary{匈牙利大奖赛} netherlands{荷兰大奖赛} italy{意大利大奖赛} spain{西班牙大奖赛} azerbaijan{阿塞拜疆大奖赛} bahrain{巴林（马来西亚站）大奖赛} singapore{新加坡大奖赛} unitedStates{美国大奖赛} mexicoCity{墨西哥城大奖赛} saoPaulo{圣保罗大奖赛} lasVegas{拉斯维加斯大奖赛} qatar{卡塔尔大奖赛} abuDhabi{阿布扎比大奖赛} other{未知比赛}}",
+  "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{未知赛道}}",
+  "raceAtCircuit": "在{circuitName}举行的比赛",
+  "ticketCategoryCount": "{count, plural, =0{没有门票类别} other{{count}种门票}}",
+  "ticketCategory": "{category, select, generalAdmission{普通入场} grandstand{看台座位} vip{贵宾票} other{其他门票类别}}",
+  "raceFilter": "{filter, select, past{已开始} upcoming{即将举行} other{全部}}",
+  "raceResultCount": "{count, plural, =0{没有比赛} other{{count}场比赛}}",
+  "circuitLabel": "赛道",
+  "raceDateUtcLabel": "正赛日期 (UTC)",
+  "raceStartUtcLabel": "正赛开始时间 (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}",
+  "displayRegionLabel": "显示地区",
+  "displayRegionName": "{region, select, raceRegion{赛道所在地区} germany{德语} czechia{捷克} english{英语（英国）} other{我的地区}}",
+  "raceDateLabel": "正赛日期",
+  "raceStartLabel": "正赛开始时间",
+  "raceTimeWithZone": "{time} ({zone})"
+}

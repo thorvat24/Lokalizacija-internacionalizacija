@@ -1,25 +1,47 @@
+import 'package:f1_circuits/display_region.dart';
+import 'package:f1_circuits/display_region_picker.dart';
 import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
 import 'package:f1_circuits/race_2026.dart';
 import 'package:f1_circuits/race_details_page.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:timezone/data/latest_all.dart' as tz;
 
-void main() => runApp(const F1CircuitsApp());
+Future<void> main() async {
+  tz.initializeTimeZones();
+  await initializeDateFormatting();
+  runApp(const F1CircuitsApp());
+}
 
-class F1CircuitsApp extends StatelessWidget {
+class F1CircuitsApp extends StatefulWidget {
   const F1CircuitsApp({super.key, this.now = DateTime.now});
 
   final DateTime Function() now;
 
   @override
+  State<F1CircuitsApp> createState() => _F1CircuitsAppState();
+}
+
+class _F1CircuitsAppState extends State<F1CircuitsApp> {
+  DisplayRegion _region = DisplayRegion.myRegion;
+
+  void _changeRegion(DisplayRegion region) => setState(() => _region = region);
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: _region.locale,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         ...GlobalMaterialLocalizations.delegates,
       ],
       onGenerateTitle: (context) => AppLocalizations.of(context)!.title,
-      home: RaceListPage(now: now),
+      home: RaceListPage(
+        now: widget.now,
+        region: _region,
+        onRegionChanged: _changeRegion,
+      ),
     );
   }
 }
@@ -27,9 +49,16 @@ class F1CircuitsApp extends StatelessWidget {
 enum _RaceFilter { all, past, upcoming }
 
 class RaceListPage extends StatefulWidget {
-  const RaceListPage({super.key, this.now = DateTime.now});
+  const RaceListPage({
+    super.key,
+    required this.now,
+    required this.region,
+    required this.onRegionChanged,
+  });
 
   final DateTime Function() now;
+  final DisplayRegion region;
+  final ValueChanged<DisplayRegion> onRegionChanged;
 
   @override
   State<RaceListPage> createState() => _RaceListPageState();
@@ -56,6 +85,13 @@ class _RaceListPageState extends State<RaceListPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+              child: DisplayRegionPicker(
+                value: widget.region,
+                onChanged: widget.onRegionChanged,
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
               child: Wrap(
@@ -95,7 +131,11 @@ class _RaceListPageState extends State<RaceListPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute<void>(
-                          builder: (context) => RaceDetailsPage(race: race),
+                          builder: (context) => RaceDetailsPage(
+                            race: race,
+                            initialRegion: widget.region,
+                            onSharedRegionChanged: widget.onRegionChanged,
+                          ),
                         ),
                       );
                     },

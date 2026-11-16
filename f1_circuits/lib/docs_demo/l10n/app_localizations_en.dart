@@ -148,4 +148,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
     return '$timeString';
   }
+
+  @override
+  String get displayRegionLabel => 'Display region';
+
+  @override
+  String displayRegionName(String region) {
+    String _temp0 = intl.Intl.selectLogic(region, {
+      'raceRegion': 'Race region',
+      'germany': 'German',
+      'czechia': 'Czechia',
+      'english': 'English (UK)',
+      'other': 'My region',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get raceDateLabel => 'Race date';
+
+  @override
+  String get raceStartLabel => 'Race start';
+
+  @override
+  String raceTimeWithZone(String time, String zone) {
+    return '$time ($zone)';
+  }
 }
