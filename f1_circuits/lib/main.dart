@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
+import 'package:material_ui/material_ui.dart';
 
 void main() => runApp(const F1CalendarDemo());
 
@@ -9,13 +9,12 @@ class F1CalendarDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: const Locale('en', 'US'),
-      supportedLocales: const [
-        Locale('en', 'US'),
-        Locale('de', 'DE'),
-        Locale('ja', 'JP'),
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        ...GlobalMaterialLocalizations.delegates,
       ],
-      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.title,
       home: Builder(
         builder: (appContext) {
           final raceDay = DateTime(2026, 11, 21);
@@ -30,6 +29,7 @@ class F1CalendarDemo extends StatelessWidget {
           }
 
           return Scaffold(
+            appBar: AppBar(title: Text(AppLocalizations.of(appContext)!.title)),
             body: SafeArea(
               child: ListView(
                 padding: const EdgeInsets.all(16),

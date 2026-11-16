@@ -1,30 +1,44 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:f1_circuits/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
-import 'package:f1_circuits/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('uses English as a fallback and localizes the second calendar', (
+    tester,
+  ) async {
+    final dispatcher = tester.binding.platformDispatcher;
+    dispatcher.localesTestValue = const [Locale('de', 'DE')];
+    addTearDown(dispatcher.clearLocalesTestValue);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpWidget(const F1CalendarDemo());
+    await tester.pumpAndSettle();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    expect(find.text('F1 Circuits 2026'), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    final calendars = find.byType(CalendarDatePicker);
+    expect(calendars, findsNWidgets(2));
+    final englishCalendar = tester.element(calendars.at(0));
+    final japaneseCalendar = tester.element(calendars.at(1));
+    expect(Localizations.localeOf(englishCalendar), const Locale('en'));
+    expect(Localizations.localeOf(japaneseCalendar), const Locale('ja', 'JP'));
+
+    final raceDay = DateTime(2026, 11, 21);
+    expect(
+      MaterialLocalizations.of(englishCalendar).formatMonthYear(raceDay),
+      isNot(
+        MaterialLocalizations.of(japaneseCalendar).formatMonthYear(raceDay),
+      ),
+    );
+  });
+
+  testWidgets('uses Croatian app strings on a Croatian device', (tester) async {
+    final dispatcher = tester.binding.platformDispatcher;
+    dispatcher.localesTestValue = const [Locale('hr', 'HR')];
+    addTearDown(dispatcher.clearLocalesTestValue);
+
+    await tester.pumpWidget(const F1CalendarDemo());
+    await tester.pumpAndSettle();
+
+    expect(find.text('F1 staze 2026'), findsOneWidget);
   });
 }

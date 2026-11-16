@@ -1,0 +1,8 @@
+{
+  "@@locale": "en",
+  "title": "F1 Circuits 2026",
+  "grandstand": "Grandstand",
+  "@grandstand": {
+    "description": "Ticket category for a seat in a grandstand"
+  }
+}
