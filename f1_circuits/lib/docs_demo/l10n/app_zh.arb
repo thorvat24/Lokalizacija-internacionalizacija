@@ -19,5 +19,9 @@
   "raceStartLabel": "正赛开始时间",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "正赛当天的门票价格（{currency}）",
-  "sampleTicketPrices": "票价和汇率仅为示例。"
+  "sampleTicketPrices": "票价和汇率仅为示例。",
+  "demoEscapedZone": "时区: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

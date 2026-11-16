@@ -19,5 +19,9 @@
   "raceStartLabel": "Masa mula perlumbaan",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "Harga tiket hari perlumbaan ({currency})",
-  "sampleTicketPrices": "Contoh harga dan kadar pertukaran."
+  "sampleTicketPrices": "Contoh harga dan kadar pertukaran.",
+  "demoEscapedZone": "Zon waktu: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

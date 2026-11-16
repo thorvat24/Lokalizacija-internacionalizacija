@@ -19,5 +19,9 @@
   "raceStartLabel": "Rennstart",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "Ticketpreise für den Renntag ({currency})",
-  "sampleTicketPrices": "Beispielpreise und Beispielwechselkurse."
+  "sampleTicketPrices": "Beispielpreise und Beispielwechselkurse.",
+  "demoEscapedZone": "Zeitzone: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

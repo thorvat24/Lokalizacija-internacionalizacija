@@ -19,5 +19,9 @@
   "raceStartLabel": "Start van de race",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "Ticketprijzen voor de racedag ({currency})",
-  "sampleTicketPrices": "Voorbeeldprijzen en voorbeeldwisselkoersen."
+  "sampleTicketPrices": "Voorbeeldprijzen en voorbeeldwisselkoersen.",
+  "demoEscapedZone": "Tijdzone: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

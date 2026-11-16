@@ -19,5 +19,9 @@
   "raceStartLabel": "Start závodu",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "Ceny vstupenek na den závodu ({currency})",
-  "sampleTicketPrices": "Ukázkové ceny a směnné kurzy."
+  "sampleTicketPrices": "Ukázkové ceny a směnné kurzy.",
+  "demoEscapedZone": "Časové pásmo: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

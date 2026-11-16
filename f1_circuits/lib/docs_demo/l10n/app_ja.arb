@@ -19,5 +19,9 @@
   "raceStartLabel": "決勝開始時刻",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "決勝日のチケット料金（{currency}）",
-  "sampleTicketPrices": "料金と為替レートはサンプルです。"
+  "sampleTicketPrices": "料金と為替レートはサンプルです。",
+  "demoEscapedZone": "タイムゾーン: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

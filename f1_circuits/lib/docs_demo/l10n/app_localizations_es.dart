@@ -182,4 +182,37 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sampleTicketPrices => 'Precios y tipos de cambio de ejemplo.';
+
+  @override
+  String get demoEscapedZone => 'Zona horaria: {UTC}';
+
+  @override
+  String demoShortDate(DateTime date) {
+    final intl.DateFormat dateDateFormat = intl.DateFormat.yMd(localeName);
+    final String dateString = dateDateFormat.format(date);
+
+    return '$dateString';
+  }
+
+  @override
+  String demoFormatUsd(num amount) {
+    final intl.NumberFormat amountNumberFormat =
+        intl.NumberFormat.simpleCurrency(locale: localeName, name: 'USD');
+    final String amountString = amountNumberFormat.format(amount);
+
+    return '$amountString';
+  }
+
+  @override
+  String demoCompactHuf(num amount) {
+    final intl.NumberFormat amountNumberFormat =
+        intl.NumberFormat.compactCurrency(
+          locale: localeName,
+          name: 'HUF',
+          decimalDigits: 1,
+        );
+    final String amountString = amountNumberFormat.format(amount);
+
+    return '$amountString';
+  }
 }

@@ -19,5 +19,9 @@
   "raceStartLabel": "A futam rajtja",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "A futam napjára szóló jegyárak ({currency})",
-  "sampleTicketPrices": "Példaárak és példaárfolyamok."
+  "sampleTicketPrices": "Példaárak és példaárfolyamok.",
+  "demoEscapedZone": "Időzóna: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

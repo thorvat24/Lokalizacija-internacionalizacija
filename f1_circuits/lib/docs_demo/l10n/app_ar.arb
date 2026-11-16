@@ -19,5 +19,9 @@
   "raceStartLabel": "موعد انطلاق السباق",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "أسعار تذاكر يوم السباق ({currency})",
-  "sampleTicketPrices": "أسعار وأسعار صرف لأغراض العرض."
+  "sampleTicketPrices": "أسعار وأسعار صرف لأغراض العرض.",
+  "demoEscapedZone": "المنطقة الزمنية: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

@@ -19,5 +19,9 @@
   "raceStartLabel": "Partenza della gara",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "Prezzi dei biglietti per il giorno della gara ({currency})",
-  "sampleTicketPrices": "Prezzi e tassi di cambio di esempio."
+  "sampleTicketPrices": "Prezzi e tassi di cambio di esempio.",
+  "demoEscapedZone": "Fuso orario: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

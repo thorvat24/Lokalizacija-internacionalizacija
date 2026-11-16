@@ -19,5 +19,9 @@
   "raceStartLabel": "Početak utrke",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "Cijene ulaznica za dan utrke ({currency})",
-  "sampleTicketPrices": "Ogledne cijene i tečajevi."
+  "sampleTicketPrices": "Ogledne cijene i tečajevi.",
+  "demoEscapedZone": "Vremenska zona: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

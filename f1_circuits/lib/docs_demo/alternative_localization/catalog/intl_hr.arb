@@ -1,0 +1,10 @@
+{
+  "@@last_modified": "2026-11-17T00:46:50.23495",
+  "lasVegasTitle": "Velika nagrada Las Vegasa",
+  "@lasVegasTitle": {
+    "description": "Race name in the Intl.message example.",
+    "type": "text",
+    "placeholders": {}
+  },
+  "@@locale": "hr"
+}

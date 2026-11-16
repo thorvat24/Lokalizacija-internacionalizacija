@@ -243,6 +243,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sample prices and exchange rates.'**
   String get sampleTicketPrices;
+
+  /// No description provided for @demoEscapedZone.
+  ///
+  /// In en, this message translates to:
+  /// **'Time zone: \'{UTC}\''**
+  String get demoEscapedZone;
+
+  /// No description provided for @demoShortDate.
+  ///
+  /// In en, this message translates to:
+  /// **'{date}'**
+  String demoShortDate(DateTime date);
+
+  /// No description provided for @demoFormatUsd.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount}'**
+  String demoFormatUsd(num amount);
+
+  /// No description provided for @demoCompactHuf.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount}'**
+  String demoCompactHuf(num amount);
 }
 
 class _AppLocalizationsDelegate

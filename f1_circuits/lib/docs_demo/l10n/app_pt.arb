@@ -19,5 +19,9 @@
   "raceStartLabel": "Largada",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "Preços dos ingressos para o dia da corrida ({currency})",
-  "sampleTicketPrices": "Preços e taxas de câmbio de exemplo."
+  "sampleTicketPrices": "Preços e taxas de câmbio de exemplo.",
+  "demoEscapedZone": "Fuso horário: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

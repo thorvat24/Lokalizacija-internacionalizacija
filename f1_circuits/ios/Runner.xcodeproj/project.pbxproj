@@ -197,6 +197,20 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ar,
+				az,
+				cs,
+				de,
+				es,
+				fr,
+				hr,
+				hu,
+				it,
+				ja,
+				ms,
+				nl,
+				pt,
+				zh,
 				Base,
 			);
 			mainGroup = 97C146E51CF9000F007C117D;

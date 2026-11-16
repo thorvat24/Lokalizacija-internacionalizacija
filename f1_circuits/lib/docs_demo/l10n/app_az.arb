@@ -19,5 +19,9 @@
   "raceStartLabel": "Yarışın başlanğıcı",
   "raceTimeWithZone": "{time} ({zone})",
   "raceDayTicketPrices": "Yarış günü üçün bilet qiymətləri ({currency})",
-  "sampleTicketPrices": "Qiymətlər və valyuta məzənnələri nümunə üçündür."
+  "sampleTicketPrices": "Qiymətlər və valyuta məzənnələri nümunə üçündür.",
+  "demoEscapedZone": "Saat qurşağı: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}"
 }

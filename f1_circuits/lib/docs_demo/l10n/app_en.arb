@@ -121,5 +121,40 @@
         "type": "String"
       }
     }
+  },
+  "demoEscapedZone": "Time zone: '{UTC}'",
+  "demoShortDate": "{date}",
+  "demoFormatUsd": "{amount}",
+  "demoCompactHuf": "{amount}",
+  "@demoShortDate": {
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "yMd"
+      }
+    }
+  },
+  "@demoFormatUsd": {
+    "placeholders": {
+      "amount": {
+        "type": "num",
+        "format": "simpleCurrency",
+        "optionalParameters": {
+          "name": "USD"
+        }
+      }
+    }
+  },
+  "@demoCompactHuf": {
+    "placeholders": {
+      "amount": {
+        "type": "num",
+        "format": "compactCurrency",
+        "optionalParameters": {
+          "name": "HUF",
+          "decimalDigits": 1
+        }
+      }
+    }
   }
 }

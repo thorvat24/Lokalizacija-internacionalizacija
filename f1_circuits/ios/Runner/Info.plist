@@ -14,6 +14,24 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>ar</string>
+		<string>az</string>
+		<string>cs</string>
+		<string>de</string>
+		<string>es</string>
+		<string>fr</string>
+		<string>hr</string>
+		<string>hu</string>
+		<string>it</string>
+		<string>ja</string>
+		<string>ms</string>
+		<string>nl</string>
+		<string>pt</string>
+		<string>zh</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>f1_circuits</string>
 	<key>CFBundlePackageType</key>
