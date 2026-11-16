@@ -104,11 +104,29 @@ abstract class AppLocalizations {
   /// **'F1 Circuits 2026'**
   String get title;
 
-  /// Ticket category for a seat in a grandstand
+  /// No description provided for @lasVegasCircuitName.
   ///
   /// In en, this message translates to:
-  /// **'Grandstand'**
-  String get grandstand;
+  /// **'Las Vegas Strip Circuit'**
+  String get lasVegasCircuitName;
+
+  /// Heading that includes the name of the circuit.
+  ///
+  /// In en, this message translates to:
+  /// **'Race at {circuitName}'**
+  String raceAtCircuit(String circuitName);
+
+  /// Number of ticket categories shown for the race.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No ticket categories} one{{count} ticket category} other{{count} ticket categories}}'**
+  String ticketCategoryCount(int count);
+
+  /// Label for a ticket category selected by its identifier.
+  ///
+  /// In en, this message translates to:
+  /// **'{category, select, generalAdmission{General admission} grandstand{Grandstand} vip{VIP} other{Other ticket category}}'**
+  String ticketCategory(String category);
 }
 
 class _AppLocalizationsDelegate

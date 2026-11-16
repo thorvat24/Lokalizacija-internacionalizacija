@@ -13,5 +13,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get title => 'F1 Circuits 2026';
 
   @override
-  String get grandstand => 'Grandstand';
+  String get lasVegasCircuitName => 'Las Vegas Strip Circuit';
+
+  @override
+  String raceAtCircuit(String circuitName) {
+    return 'Race at $circuitName';
+  }
+
+  @override
+  String ticketCategoryCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ticket categories',
+      one: '$count ticket category',
+      zero: 'No ticket categories',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String ticketCategory(String category) {
+    String _temp0 = intl.Intl.selectLogic(category, {
+      'generalAdmission': 'General admission',
+      'grandstand': 'Grandstand',
+      'vip': 'VIP',
+      'other': 'Other ticket category',
+    });
+    return '$_temp0';
+  }
 }

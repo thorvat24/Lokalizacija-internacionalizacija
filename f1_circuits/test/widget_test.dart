@@ -1,3 +1,4 @@
+import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
 import 'package:f1_circuits/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
@@ -22,6 +23,17 @@ void main() {
     expect(Localizations.localeOf(englishCalendar), const Locale('en'));
     expect(Localizations.localeOf(japaneseCalendar), const Locale('ja', 'JP'));
 
+    final messages = AppLocalizations.of(englishCalendar)!;
+    expect(
+      messages.raceAtCircuit(messages.lasVegasCircuitName),
+      'Race at Las Vegas Strip Circuit',
+    );
+    expect(messages.ticketCategoryCount(1), '1 ticket category');
+    expect(messages.ticketCategoryCount(3), '3 ticket categories');
+    expect(messages.ticketCategory('generalAdmission'), 'General admission');
+    expect(messages.ticketCategory('grandstand'), 'Grandstand');
+    expect(messages.ticketCategory('vip'), 'VIP');
+
     final raceDay = DateTime(2026, 11, 21);
     expect(
       MaterialLocalizations.of(englishCalendar).formatMonthYear(raceDay),
@@ -40,5 +52,25 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('F1 staze 2026'), findsOneWidget);
+
+    final categoryCount = find.text('3 kategorije ulaznica');
+    await tester.scrollUntilVisible(
+      categoryCount,
+      250,
+      scrollable: find.descendant(
+        of: find.byType(ListView),
+        matching: find.byType(Scrollable).first,
+      ),
+    );
+    expect(find.text('Utrka na stazi Las Vegas Strip Circuit'), findsOneWidget);
+    expect(find.text('Opći ulaz'), findsOneWidget);
+    expect(find.text('Tribina'), findsOneWidget);
+    expect(find.text('VIP'), findsOneWidget);
+
+    final messages = AppLocalizations.of(tester.element(categoryCount))!;
+    expect(messages.ticketCategoryCount(0), 'Nema kategorija ulaznica');
+    expect(messages.ticketCategoryCount(1), '1 kategorija ulaznica');
+    expect(messages.ticketCategoryCount(5), '5 kategorija ulaznica');
+    expect(messages.ticketCategory('unknown'), 'Druga kategorija ulaznica');
   });
 }

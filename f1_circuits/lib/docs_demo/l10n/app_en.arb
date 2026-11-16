@@ -1,8 +1,33 @@
 {
   "@@locale": "en",
   "title": "F1 Circuits 2026",
-  "grandstand": "Grandstand",
-  "@grandstand": {
-    "description": "Ticket category for a seat in a grandstand"
+  "lasVegasCircuitName": "Las Vegas Strip Circuit",
+  "raceAtCircuit": "Race at {circuitName}",
+  "@raceAtCircuit": {
+    "description": "Heading that includes the name of the circuit.",
+    "placeholders": {
+      "circuitName": {
+        "type": "String",
+        "example": "Las Vegas Strip Circuit"
+      }
+    }
+  },
+  "ticketCategoryCount": "{count, plural, =0{No ticket categories} one{{count} ticket category} other{{count} ticket categories}}",
+  "@ticketCategoryCount": {
+    "description": "Number of ticket categories shown for the race.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ticketCategory": "{category, select, generalAdmission{General admission} grandstand{Grandstand} vip{VIP} other{Other ticket category}}",
+  "@ticketCategory": {
+    "description": "Label for a ticket category selected by its identifier.",
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
   }
 }

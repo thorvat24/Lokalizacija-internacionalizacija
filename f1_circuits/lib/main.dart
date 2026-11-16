@@ -17,6 +17,8 @@ class F1CalendarDemo extends StatelessWidget {
       onGenerateTitle: (context) => AppLocalizations.of(context)!.title,
       home: Builder(
         builder: (appContext) {
+          final messages = AppLocalizations.of(appContext)!;
+          const ticketCategories = ['generalAdmission', 'grandstand', 'vip'];
           final raceDay = DateTime(2026, 11, 21);
 
           Widget raceCalendar() {
@@ -29,7 +31,7 @@ class F1CalendarDemo extends StatelessWidget {
           }
 
           return Scaffold(
-            appBar: AppBar(title: Text(AppLocalizations.of(appContext)!.title)),
+            appBar: AppBar(title: Text(messages.title)),
             body: SafeArea(
               child: ListView(
                 padding: const EdgeInsets.all(16),
@@ -55,6 +57,11 @@ class F1CalendarDemo extends StatelessWidget {
                       },
                     ),
                   ),
+                  const Divider(),
+                  Text(messages.raceAtCircuit(messages.lasVegasCircuitName)),
+                  Text(messages.ticketCategoryCount(ticketCategories.length)),
+                  for (final category in ticketCategories)
+                    Text(messages.ticketCategory(category)),
                 ],
               ),
             ),

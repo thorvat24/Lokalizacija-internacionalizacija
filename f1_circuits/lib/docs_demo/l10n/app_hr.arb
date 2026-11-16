@@ -1,5 +1,8 @@
 {
   "@@locale": "hr",
   "title": "F1 staze 2026",
-  "grandstand": "Tribina"
+  "lasVegasCircuitName": "Las Vegas Strip Circuit",
+  "raceAtCircuit": "Utrka na stazi {circuitName}",
+  "ticketCategoryCount": "{count, plural, =0{Nema kategorija ulaznica} one{{count} kategorija ulaznica} few{{count} kategorije ulaznica} other{{count} kategorija ulaznica}}",
+  "ticketCategory": "{category, select, generalAdmission{Opći ulaz} grandstand{Tribina} vip{VIP} other{Druga kategorija ulaznica}}"
 }
