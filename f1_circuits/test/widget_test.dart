@@ -6,6 +6,86 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
 void main() {
+  testWidgets('opens race details and formats the Las Vegas start in UTC', (
+    tester,
+  ) async {
+    final dispatcher = tester.binding.platformDispatcher;
+    dispatcher.localesTestValue = const [Locale('en')];
+    addTearDown(dispatcher.clearLocalesTestValue);
+
+    await tester.pumpWidget(
+      F1CircuitsApp(now: () => DateTime.utc(2026, 11, 16)),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Upcoming'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Las Vegas Grand Prix'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Las Vegas Strip Circuit'), findsOneWidget);
+    expect(find.text('Race date (UTC)'), findsOneWidget);
+    expect(find.text('November 22, 2026'), findsOneWidget);
+    expect(find.text('Race start (UTC)'), findsOneWidget);
+    expect(find.textContaining(RegExp(r'^4:00\s+AM$')), findsOneWidget);
+
+    await tester.pageBack();
+    await tester.pumpAndSettle();
+    expect(find.text('3 races'), findsOneWidget);
+  });
+
+  testWidgets('formats Croatian race date and time in details', (tester) async {
+    final dispatcher = tester.binding.platformDispatcher;
+    dispatcher.localesTestValue = const [Locale('hr', 'HR')];
+    addTearDown(dispatcher.clearLocalesTestValue);
+
+    await tester.pumpWidget(const F1CircuitsApp());
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Velika nagrada Australije'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Staza'), findsOneWidget);
+    expect(find.text('Datum utrke (UTC)'), findsOneWidget);
+    expect(find.text('8. ožujka 2026.'), findsOneWidget);
+    expect(find.text('Početak utrke (UTC)'), findsOneWidget);
+    expect(find.text('04:00'), findsOneWidget);
+  });
+
+  testWidgets('filters races by start and updates the Croatian count', (
+    tester,
+  ) async {
+    final dispatcher = tester.binding.platformDispatcher;
+    dispatcher.localesTestValue = const [Locale('hr', 'HR')];
+    addTearDown(dispatcher.clearLocalesTestValue);
+    var now = DateTime.utc(2026, 11, 16);
+
+    await tester.pumpWidget(F1CircuitsApp(now: () => now));
+    await tester.pumpAndSettle();
+
+    expect(find.text('23 utrke'), findsOneWidget);
+    await tester.tap(find.text('Nadolazeće'));
+    await tester.pumpAndSettle();
+    expect(find.byType(ListTile), findsNWidgets(3));
+    expect(find.text('Velika nagrada Las Vegasa'), findsOneWidget);
+    expect(find.text('3 utrke'), findsOneWidget);
+
+    await tester.tap(find.text('Prošle'));
+    await tester.pumpAndSettle();
+    expect(find.text('20 utrka'), findsOneWidget);
+    expect(find.text('Velika nagrada Australije'), findsOneWidget);
+
+    now = Race2026.lasVegas.startUtc;
+    await tester.tap(find.text('Nadolazeće'));
+    await tester.pumpAndSettle();
+    expect(find.text('2 utrke'), findsOneWidget);
+    expect(find.text('Velika nagrada Las Vegasa'), findsNothing);
+
+    await tester.tap(find.text('Sve'));
+    await tester.pumpAndSettle();
+    expect(find.text('23 utrke'), findsOneWidget);
+  });
+
   testWidgets('shows the 2026 rounds and circuits in official calendar order', (
     tester,
   ) async {

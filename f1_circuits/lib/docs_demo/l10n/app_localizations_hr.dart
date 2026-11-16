@@ -102,4 +102,52 @@ class AppLocalizationsHr extends AppLocalizations {
     });
     return '$_temp0';
   }
+
+  @override
+  String raceFilter(String filter) {
+    String _temp0 = intl.Intl.selectLogic(filter, {
+      'past': 'Prošle',
+      'upcoming': 'Nadolazeće',
+      'other': 'Sve',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String raceResultCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count utrka',
+      few: '$count utrke',
+      one: '$count utrka',
+      zero: 'Nema utrka',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get circuitLabel => 'Staza';
+
+  @override
+  String get raceDateUtcLabel => 'Datum utrke (UTC)';
+
+  @override
+  String get raceStartUtcLabel => 'Početak utrke (UTC)';
+
+  @override
+  String raceDateValue(DateTime date) {
+    final intl.DateFormat dateDateFormat = intl.DateFormat.yMMMMd(localeName);
+    final String dateString = dateDateFormat.format(date);
+
+    return '$dateString';
+  }
+
+  @override
+  String raceTimeValue(DateTime time) {
+    final intl.DateFormat timeDateFormat = intl.DateFormat.jm(localeName);
+    final String timeString = timeDateFormat.format(time);
+
+    return '$timeString';
+  }
 }

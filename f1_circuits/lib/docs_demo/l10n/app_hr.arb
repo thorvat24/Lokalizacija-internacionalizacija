@@ -5,5 +5,12 @@
   "circuitName": "{raceId, select, australia{Albert Park Grand Prix Circuit} china{Shanghai International Circuit} japan{Suzuka International Racing Course} miami{Miami International Autodrome} canada{Circuit Gilles-Villeneuve} monaco{Circuit de Monaco} barcelona{Circuit de Barcelona-Catalunya} austria{Red Bull Ring} greatBritain{Silverstone Circuit} belgium{Circuit de Spa-Francorchamps} hungary{Hungaroring} netherlands{Circuit Zandvoort} italy{Autodromo Nazionale Monza} spain{Madring} azerbaijan{Baku City Circuit} bahrain{Sepang International Circuit} singapore{Marina Bay Street Circuit} unitedStates{Circuit of the Americas} mexicoCity{Autódromo Hermanos Rodríguez} saoPaulo{Autódromo José Carlos Pace (Interlagos)} lasVegas{Las Vegas Strip Circuit} qatar{Lusail International Circuit} abuDhabi{Yas Marina Circuit} other{Nepoznata staza}}",
   "raceAtCircuit": "Utrka na stazi {circuitName}",
   "ticketCategoryCount": "{count, plural, =0{Nema kategorija ulaznica} one{{count} kategorija ulaznica} few{{count} kategorije ulaznica} other{{count} kategorija ulaznica}}",
-  "ticketCategory": "{category, select, generalAdmission{Opći ulaz} grandstand{Tribina} vip{VIP} other{Druga kategorija ulaznica}}"
+  "ticketCategory": "{category, select, generalAdmission{Opći ulaz} grandstand{Tribina} vip{VIP} other{Druga kategorija ulaznica}}",
+  "raceFilter": "{filter, select, past{Prošle} upcoming{Nadolazeće} other{Sve}}",
+  "raceResultCount": "{count, plural, =0{Nema utrka} one{{count} utrka} few{{count} utrke} other{{count} utrka}}",
+  "circuitLabel": "Staza",
+  "raceDateUtcLabel": "Datum utrke (UTC)",
+  "raceStartUtcLabel": "Početak utrke (UTC)",
+  "raceDateValue": "{date}",
+  "raceTimeValue": "{time}"
 }

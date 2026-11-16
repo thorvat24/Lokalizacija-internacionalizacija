@@ -133,6 +133,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{category, select, generalAdmission{General admission} grandstand{Grandstand} vip{VIP} other{Other ticket category}}'**
   String ticketCategory(String category);
+
+  /// Label of a filter for the season's race list.
+  ///
+  /// In en, this message translates to:
+  /// **'{filter, select, past{Past} upcoming{Upcoming} other{All}}'**
+  String raceFilter(String filter);
+
+  /// Number of races matching the selected filter.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No races} one{{count} race} other{{count} races}}'**
+  String raceResultCount(int count);
+
+  /// No description provided for @circuitLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Circuit'**
+  String get circuitLabel;
+
+  /// No description provided for @raceDateUtcLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Race date (UTC)'**
+  String get raceDateUtcLabel;
+
+  /// No description provided for @raceStartUtcLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Race start (UTC)'**
+  String get raceStartUtcLabel;
+
+  /// Calendar date of the race start in the displayed time zone.
+  ///
+  /// In en, this message translates to:
+  /// **'{date}'**
+  String raceDateValue(DateTime date);
+
+  /// Time of the race start in the displayed time zone.
+  ///
+  /// In en, this message translates to:
+  /// **'{time}'**
+  String raceTimeValue(DateTime time);
 }
 
 class _AppLocalizationsDelegate

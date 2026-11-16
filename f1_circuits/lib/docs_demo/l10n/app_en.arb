@@ -46,5 +46,46 @@
         "type": "String"
       }
     }
+  },
+  "raceFilter": "{filter, select, past{Past} upcoming{Upcoming} other{All}}",
+  "@raceFilter": {
+    "description": "Label of a filter for the season's race list.",
+    "placeholders": {
+      "filter": {
+        "type": "String"
+      }
+    }
+  },
+  "raceResultCount": "{count, plural, =0{No races} one{{count} race} other{{count} races}}",
+  "@raceResultCount": {
+    "description": "Number of races matching the selected filter.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "circuitLabel": "Circuit",
+  "raceDateUtcLabel": "Race date (UTC)",
+  "raceStartUtcLabel": "Race start (UTC)",
+  "raceDateValue": "{date}",
+  "@raceDateValue": {
+    "description": "Calendar date of the race start in the displayed time zone.",
+    "placeholders": {
+      "date": {
+        "type": "DateTime",
+        "format": "yMMMMd"
+      }
+    }
+  },
+  "raceTimeValue": "{time}",
+  "@raceTimeValue": {
+    "description": "Time of the race start in the displayed time zone.",
+    "placeholders": {
+      "time": {
+        "type": "DateTime",
+        "format": "jm"
+      }
+    }
   }
 }
