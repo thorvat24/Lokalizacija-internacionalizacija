@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{開催地の地域} germany{ドイツ語} czechia{チェコ} english{英語（イギリス）} other{端末の地域}}",
   "raceDateLabel": "決勝日",
   "raceStartLabel": "決勝開始時刻",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "決勝日のチケット料金（{currency}）",
+  "sampleTicketPrices": "料金と為替レートはサンプルです。"
 }

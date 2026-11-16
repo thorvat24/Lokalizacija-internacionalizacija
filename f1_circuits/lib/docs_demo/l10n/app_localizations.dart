@@ -231,6 +231,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{time} ({zone})'**
   String raceTimeWithZone(String time, String zone);
+
+  /// Heading for race-day ticket prices, including the selected ISO currency code.
+  ///
+  /// In en, this message translates to:
+  /// **'Race-day ticket prices ({currency})'**
+  String raceDayTicketPrices(String currency);
+
+  /// No description provided for @sampleTicketPrices.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample prices and exchange rates.'**
+  String get sampleTicketPrices;
 }
 
 class _AppLocalizationsDelegate

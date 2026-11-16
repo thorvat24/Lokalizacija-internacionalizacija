@@ -172,4 +172,12 @@ class AppLocalizationsMs extends AppLocalizations {
   String raceTimeWithZone(String time, String zone) {
     return '$time ($zone)';
   }
+
+  @override
+  String raceDayTicketPrices(String currency) {
+    return 'Harga tiket hari perlumbaan ($currency)';
+  }
+
+  @override
+  String get sampleTicketPrices => 'Contoh harga dan kadar pertukaran.';
 }

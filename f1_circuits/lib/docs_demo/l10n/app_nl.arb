@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{Regio van het circuit} germany{Duits} czechia{Tsjechië} english{Engels (VK)} other{Mijn regio}}",
   "raceDateLabel": "Racedatum",
   "raceStartLabel": "Start van de race",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "Ticketprijzen voor de racedag ({currency})",
+  "sampleTicketPrices": "Voorbeeldprijzen en voorbeeldwisselkoersen."
 }

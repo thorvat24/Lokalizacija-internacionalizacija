@@ -3,9 +3,10 @@ import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
 import 'package:f1_circuits/docs_demo/calendar_demo.dart';
 import 'package:f1_circuits/main.dart';
 import 'package:f1_circuits/race_2026.dart';
+import 'package:f1_circuits/ticket_pricing.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:intl/intl.dart' show DateFormat;
+import 'package:intl/intl.dart' show DateFormat, Intl, NumberFormat;
 import 'package:material_ui/material_ui.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -185,7 +186,66 @@ void main() {
     }
   });
 
-  test('all race regions resolve to an IANA zone and a date locale', () {
+  testWidgets('converts all three race-day prices when the region changes', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      F1CircuitsApp(now: () => DateTime.utc(2026, 11, 17)),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Nadolazeće'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Velika nagrada Las Vegasa'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Cijene ulaznica za dan utrke (EUR)'), findsOne);
+    expect(find.text('Ogledne cijene i tečajevi.'), findsOne);
+    expect(find.text('Opći ulaz'), findsOne);
+    expect(find.text('Tribina'), findsOne);
+    expect(find.text('VIP'), findsOne);
+
+    final menu = find.byType(DropdownButton<DisplayRegion>);
+    for (final (choice, locale, currency, heading, amounts) in [
+      (
+        'Češka',
+        'cs_CZ',
+        'CZK',
+        'Ceny vstupenek na den závodu (CZK)',
+        [3750, 8000, 23750],
+      ),
+      (
+        'Angličtina (Spojené království)',
+        'en_GB',
+        'GBP',
+        'Race-day ticket prices (GBP)',
+        [127.5, 272, 807.5],
+      ),
+      (
+        'Race region',
+        'en_US',
+        'USD',
+        'Race-day ticket prices (USD)',
+        [165, 352, 1045],
+      ),
+    ]) {
+      await tester.tap(menu);
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(choice).last);
+      await tester.pumpAndSettle();
+
+      expect(find.text(heading), findsOne);
+      final format = NumberFormat.simpleCurrency(
+        locale: locale,
+        name: currency,
+      );
+      for (final amount in amounts) {
+        expect(find.text(format.format(amount)), findsOne);
+      }
+    }
+  });
+
+  test('all race regions resolve dates and ticket prices', () {
     for (final race in Race2026.values) {
       final start = tz.TZDateTime.from(
         race.startUtc,
@@ -193,6 +253,19 @@ void main() {
       );
       expect(start.isAtSameMomentAs(race.startUtc), isTrue, reason: race.name);
       expect(DateFormat.yMMMMd(race.locale).format(start), isNotEmpty);
+      final locale = Intl.verifiedLocale(race.locale, DateFormat.localeExists);
+      final currency = NumberFormat.simpleCurrency(
+        locale: locale,
+        name: race.currency.code,
+      );
+      final prices = [
+        for (final category in TicketCategory.values)
+          race.ticketPrices.eurosFor(category) * race.currency.unitsPerEuro,
+      ];
+      expect(prices, orderedEquals(prices.toList()..sort()), reason: race.name);
+      expect(prices.toSet(), hasLength(3), reason: race.name);
+      expect(prices.first, greaterThan(0), reason: race.name);
+      expect(prices.map(currency.format).toSet(), hasLength(3));
       expect(
         AppLocalizations.delegate.isSupported(race.interfaceLocale),
         isTrue,

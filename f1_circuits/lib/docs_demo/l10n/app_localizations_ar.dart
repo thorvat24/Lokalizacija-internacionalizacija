@@ -180,4 +180,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String raceTimeWithZone(String time, String zone) {
     return '$time ($zone)';
   }
+
+  @override
+  String raceDayTicketPrices(String currency) {
+    return 'أسعار تذاكر يوم السباق ($currency)';
+  }
+
+  @override
+  String get sampleTicketPrices => 'أسعار وأسعار صرف لأغراض العرض.';
 }

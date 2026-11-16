@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{Rantau litar} germany{Bahasa Jerman} czechia{Czechia} english{Bahasa Inggeris (UK)} other{Rantau saya}}",
   "raceDateLabel": "Tarikh perlumbaan",
   "raceStartLabel": "Masa mula perlumbaan",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "Harga tiket hari perlumbaan ({currency})",
+  "sampleTicketPrices": "Contoh harga dan kadar pertukaran."
 }

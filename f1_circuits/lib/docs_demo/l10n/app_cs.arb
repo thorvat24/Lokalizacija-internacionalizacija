@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{Oblast okruhu} czechia{Česko} english{Angličtina (Spojené království)} germany{Němčina} other{Moje oblast}}",
   "raceDateLabel": "Datum závodu",
   "raceStartLabel": "Start závodu",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "Ceny vstupenek na den závodu ({currency})",
+  "sampleTicketPrices": "Ukázkové ceny a směnné kurzy."
 }

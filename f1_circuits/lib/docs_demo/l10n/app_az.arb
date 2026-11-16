@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{Trasın regionu} germany{Alman dili} czechia{Çexiya} english{İngilis dili (Birləşmiş Krallıq)} other{Mənim regionum}}",
   "raceDateLabel": "Yarışın tarixi",
   "raceStartLabel": "Yarışın başlanğıcı",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "Yarış günü üçün bilet qiymətləri ({currency})",
+  "sampleTicketPrices": "Qiymətlər və valyuta məzənnələri nümunə üçündür."
 }

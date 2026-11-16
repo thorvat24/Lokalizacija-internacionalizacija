@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{Región del circuito} germany{Alemán} czechia{Chequia} english{Inglés (Reino Unido)} other{Mi región}}",
   "raceDateLabel": "Fecha de la carrera",
   "raceStartLabel": "Inicio de la carrera",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "Precios de las entradas para el día de la carrera ({currency})",
+  "sampleTicketPrices": "Precios y tipos de cambio de ejemplo."
 }

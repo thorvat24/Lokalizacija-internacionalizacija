@@ -111,5 +111,15 @@
         "type": "String"
       }
     }
+  },
+  "raceDayTicketPrices": "Race-day ticket prices ({currency})",
+  "sampleTicketPrices": "Sample prices and exchange rates.",
+  "@raceDayTicketPrices": {
+    "description": "Heading for race-day ticket prices, including the selected ISO currency code.",
+    "placeholders": {
+      "currency": {
+        "type": "String"
+      }
+    }
   }
 }

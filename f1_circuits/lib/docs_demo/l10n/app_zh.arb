@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{赛道所在地区} germany{德语} czechia{捷克} english{英语（英国）} other{我的地区}}",
   "raceDateLabel": "正赛日期",
   "raceStartLabel": "正赛开始时间",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "正赛当天的门票价格（{currency}）",
+  "sampleTicketPrices": "票价和汇率仅为示例。"
 }

@@ -172,4 +172,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String raceTimeWithZone(String time, String zone) {
     return '$time ($zone)';
   }
+
+  @override
+  String raceDayTicketPrices(String currency) {
+    return '正赛当天的门票价格（$currency）';
+  }
+
+  @override
+  String get sampleTicketPrices => '票价和汇率仅为示例。';
 }

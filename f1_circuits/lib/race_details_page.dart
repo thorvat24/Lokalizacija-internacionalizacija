@@ -2,7 +2,8 @@ import 'package:f1_circuits/display_region.dart';
 import 'package:f1_circuits/display_region_picker.dart';
 import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
 import 'package:f1_circuits/race_2026.dart';
-import 'package:intl/intl.dart';
+import 'package:f1_circuits/ticket_prices_card.dart';
+import 'package:intl/intl.dart' show DateFormat, Intl;
 import 'package:material_ui/material_ui.dart';
 import 'package:timezone/timezone.dart' as tz;
 
@@ -49,11 +50,13 @@ class _RaceDetailsPageState extends State<RaceDetailsPage> {
     final messages = AppLocalizations.of(context)!;
     final race = widget.race;
     final settings = _region.settings(race);
-    final locale = Intl.verifiedLocale(
-      Intl.canonicalizedLocale(settings.locale.toLanguageTag()),
-      DateFormat.localeExists,
-      onFailure: (_) => messages.localeName,
-    );
+    final locale =
+        Intl.verifiedLocale(
+          Intl.canonicalizedLocale(settings.locale.toLanguageTag()),
+          DateFormat.localeExists,
+          onFailure: (_) => null,
+        ) ??
+        messages.localeName;
     final start = tz.TZDateTime.from(
       race.startUtc,
       tz.getLocation(settings.timeZone),
@@ -89,6 +92,12 @@ class _RaceDetailsPageState extends State<RaceDetailsPage> {
                   start.timeZoneName,
                 ),
               ),
+            ),
+            const SizedBox(height: 8),
+            TicketPricesCard(
+              prices: race.ticketPrices,
+              currency: settings.currency,
+              locale: locale,
             ),
           ],
         ),

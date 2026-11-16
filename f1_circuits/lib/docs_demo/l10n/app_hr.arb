@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{Regija utrke} germany{Njemački} czechia{Češka} english{Engleski (UK)} other{Moja regija}}",
   "raceDateLabel": "Datum utrke",
   "raceStartLabel": "Početak utrke",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "Cijene ulaznica za dan utrke ({currency})",
+  "sampleTicketPrices": "Ogledne cijene i tečajevi."
 }

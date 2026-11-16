@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{منطقة الحلبة} germany{الألمانية} czechia{التشيك} english{الإنجليزية (المملكة المتحدة)} other{منطقتي}}",
   "raceDateLabel": "تاريخ السباق",
   "raceStartLabel": "موعد انطلاق السباق",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "أسعار تذاكر يوم السباق ({currency})",
+  "sampleTicketPrices": "أسعار وأسعار صرف لأغراض العرض."
 }

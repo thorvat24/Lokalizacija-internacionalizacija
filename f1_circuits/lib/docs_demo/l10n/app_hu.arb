@@ -17,5 +17,7 @@
   "displayRegionName": "{region, select, raceRegion{A versenypálya régiója} germany{Német} czechia{Csehország} english{Angol (Egyesült Királyság)} other{Saját régió}}",
   "raceDateLabel": "A futam dátuma",
   "raceStartLabel": "A futam rajtja",
-  "raceTimeWithZone": "{time} ({zone})"
+  "raceTimeWithZone": "{time} ({zone})",
+  "raceDayTicketPrices": "A futam napjára szóló jegyárak ({currency})",
+  "sampleTicketPrices": "Példaárak és példaárfolyamok."
 }

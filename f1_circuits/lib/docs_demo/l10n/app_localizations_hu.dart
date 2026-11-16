@@ -172,4 +172,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String raceTimeWithZone(String time, String zone) {
     return '$time ($zone)';
   }
+
+  @override
+  String raceDayTicketPrices(String currency) {
+    return 'A futam napjára szóló jegyárak ($currency)';
+  }
+
+  @override
+  String get sampleTicketPrices => 'Példaárak és példaárfolyamok.';
 }
