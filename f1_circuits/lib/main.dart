@@ -2,7 +2,9 @@ import 'package:f1_circuits/display_region.dart';
 import 'package:f1_circuits/display_region_picker.dart';
 import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
 import 'package:f1_circuits/race_2026.dart';
+import 'package:f1_circuits/race_artwork.dart';
 import 'package:f1_circuits/race_details_page.dart';
+import 'package:f1_circuits/race_theme.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
@@ -23,6 +25,7 @@ class F1CircuitsApp extends StatefulWidget {
 }
 
 class _F1CircuitsAppState extends State<F1CircuitsApp> {
+  final _theme = buildRaceTheme();
   DisplayRegion _region = DisplayRegion.myRegion;
 
   void _changeRegion(DisplayRegion region) => setState(() => _region = region);
@@ -30,6 +33,8 @@ class _F1CircuitsAppState extends State<F1CircuitsApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: _theme,
       locale: _region.locale,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: const [
@@ -70,6 +75,7 @@ class _RaceListPageState extends State<RaceListPage> {
   @override
   Widget build(BuildContext context) {
     final messages = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     final now = widget.now();
     final races = Race2026.values.where((race) {
       return switch (_filter) {
@@ -80,70 +86,129 @@ class _RaceListPageState extends State<RaceListPage> {
     }).toList();
 
     return Scaffold(
-      appBar: AppBar(title: Text(messages.title)),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      appBar: AppBar(
+        title: Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-              child: DisplayRegionPicker(
-                value: widget.region,
-                onChanged: widget.onRegionChanged,
+            Container(
+              width: 4,
+              height: 24,
+              decoration: BoxDecoration(
+                color: theme.colorScheme.primary,
+                borderRadius: BorderRadius.circular(2),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-              child: Wrap(
-                spacing: 8,
-                runSpacing: 4,
-                children: [
-                  for (final filter in _RaceFilter.values)
-                    ChoiceChip(
-                      label: Text(messages.raceFilter(filter.name)),
-                      selected: _filter == filter,
-                      onSelected: (selected) {
-                        if (selected) setState(() => _filter = filter);
-                      },
-                    ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-              child: Semantics(
-                liveRegion: true,
-                child: Text(messages.raceResultCount(races.length)),
-              ),
-            ),
+            const SizedBox(width: 12),
             Expanded(
-              child: ListView.separated(
-                key: ValueKey(_filter),
-                itemCount: races.length,
-                separatorBuilder: (context, index) => const Divider(height: 1),
-                itemBuilder: (context, index) {
-                  final race = races[index];
-
-                  return ListTile(
-                    title: Text(messages.raceName(race.name)),
-                    subtitle: Text(messages.circuitName(race.name)),
-                    trailing: const Icon(Icons.chevron_right),
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute<void>(
-                          builder: (context) => RaceDetailsPage(
-                            race: race,
-                            initialRegion: widget.region,
-                            onSharedRegionChanged: widget.onRegionChanged,
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                },
+              child: Text(
+                messages.title,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
+        ),
+      ),
+      body: SafeArea(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 680),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                  child: DisplayRegionPicker(
+                    value: widget.region,
+                    onChanged: widget.onRegionChanged,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                  child: Wrap(
+                    spacing: 8,
+                    runSpacing: 4,
+                    children: [
+                      for (final filter in _RaceFilter.values)
+                        ChoiceChip(
+                          label: Text(messages.raceFilter(filter.name)),
+                          selected: _filter == filter,
+                          onSelected: (selected) {
+                            if (selected) setState(() => _filter = filter);
+                          },
+                        ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+                  child: Semantics(
+                    liveRegion: true,
+                    child: Text(
+                      messages.raceResultCount(races.length),
+                      style: theme.textTheme.labelLarge?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.separated(
+                    key: ValueKey(_filter),
+                    itemCount: races.length,
+                    padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(height: 8),
+                    itemBuilder: (context, index) {
+                      final race = races[index];
+
+                      return Card(
+                        clipBehavior: Clip.antiAlias,
+                        child: ListTile(
+                          contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 8,
+                          ),
+                          horizontalTitleGap: 12,
+                          leading: CircuitArtwork.thumbnail(race: race),
+                          title: Text(
+                            messages.raceName(race.name),
+                            style: theme.textTheme.titleMedium?.copyWith(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          subtitle: Text(
+                            messages.circuitName(race.name),
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: theme.colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              HostFlag(race: race),
+                              const SizedBox(width: 4),
+                              const Icon(Icons.chevron_right, size: 20),
+                            ],
+                          ),
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (context) => RaceDetailsPage(
+                                  race: race,
+                                  initialRegion: widget.region,
+                                  onSharedRegionChanged: widget.onRegionChanged,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

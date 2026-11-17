@@ -17,6 +17,7 @@ class DisplayRegionPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messages = AppLocalizations.of(context)!;
+    final colors = Theme.of(context).colorScheme;
     final options = includeRaceRegion
         ? DisplayRegion.forRace
         : DisplayRegion.shared;
@@ -24,7 +25,7 @@ class DisplayRegionPicker extends StatelessWidget {
     return InputDecorator(
       decoration: InputDecoration(
         labelText: messages.displayRegionLabel,
-        border: const OutlineInputBorder(),
+        prefixIcon: const Icon(Icons.language_rounded, size: 20),
         isDense: true,
         contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       ),
@@ -32,6 +33,9 @@ class DisplayRegionPicker extends StatelessWidget {
         child: DropdownButton<DisplayRegion>(
           value: value,
           isExpanded: true,
+          dropdownColor: colors.surfaceContainerHigh,
+          iconEnabledColor: colors.secondary,
+          borderRadius: BorderRadius.circular(14),
           items: [
             for (final option in options)
               DropdownMenuItem(

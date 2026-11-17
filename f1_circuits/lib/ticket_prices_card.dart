@@ -18,6 +18,7 @@ class TicketPricesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messages = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     final format = NumberFormat.simpleCurrency(
       locale: locale,
       name: currency.code,
@@ -34,26 +35,37 @@ class TicketPricesCard extends StatelessWidget {
               children: [
                 Text(
                   messages.raceDayTicketPrices(currency.code),
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   messages.sampleTicketPrices,
-                  style: Theme.of(context).textTheme.bodySmall,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
                 ),
               ],
             ),
           ),
-          for (final category in TicketCategory.values)
+          for (final category in TicketCategory.values) ...[
+            const Divider(indent: 16, endIndent: 16),
             ListTile(
               title: Text(messages.ticketCategory(category.name)),
               trailing: Text(
                 format.format(
                   prices.eurosFor(category) * currency.unitsPerEuro,
                 ),
-                style: Theme.of(context).textTheme.titleSmall,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  color: theme.colorScheme.secondary,
+                  fontWeight: FontWeight.w800,
+                  fontFeatures: const [FontFeature.tabularFigures()],
+                ),
               ),
             ),
+          ],
+          const SizedBox(height: 4),
         ],
       ),
     );

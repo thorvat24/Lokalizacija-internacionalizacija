@@ -2,6 +2,7 @@ import 'package:f1_circuits/display_region.dart';
 import 'package:f1_circuits/display_region_picker.dart';
 import 'package:f1_circuits/docs_demo/l10n/app_localizations.dart';
 import 'package:f1_circuits/race_2026.dart';
+import 'package:f1_circuits/race_artwork.dart';
 import 'package:f1_circuits/ticket_prices_card.dart';
 import 'package:intl/intl.dart' show DateFormat, Intl;
 import 'package:material_ui/material_ui.dart';
@@ -48,6 +49,7 @@ class _RaceDetailsPageState extends State<RaceDetailsPage> {
 
   Widget _buildDetails(BuildContext context) {
     final messages = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     final race = widget.race;
     final settings = _region.settings(race);
     final locale =
@@ -63,43 +65,74 @@ class _RaceDetailsPageState extends State<RaceDetailsPage> {
     );
 
     return Scaffold(
-      appBar: AppBar(title: Text(messages.raceName(race.name))),
+      appBar: AppBar(
+        title: Text(
+          messages.raceName(race.name),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
       body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.all(16),
-          children: [
-            DisplayRegionPicker(
-              value: _region,
-              includeRaceRegion: true,
-              onChanged: _changeRegion,
-            ),
-            ListTile(
-              leading: const Icon(Icons.place_outlined),
-              title: Text(messages.circuitLabel),
-              subtitle: Text(messages.circuitName(race.name)),
-            ),
-            ListTile(
-              leading: const Icon(Icons.calendar_today_outlined),
-              title: Text(messages.raceDateLabel),
-              subtitle: Text(DateFormat.yMMMMd(locale).format(start)),
-            ),
-            ListTile(
-              leading: const Icon(Icons.schedule_outlined),
-              title: Text(messages.raceStartLabel),
-              subtitle: Text(
-                messages.raceTimeWithZone(
-                  DateFormat.jm(locale).format(start),
-                  start.timeZoneName,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 680),
+            child: ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                DisplayRegionPicker(
+                  value: _region,
+                  includeRaceRegion: true,
+                  onChanged: _changeRegion,
                 ),
-              ),
+                const SizedBox(height: 14),
+                CircuitArtwork(race: race),
+                const SizedBox(height: 14),
+                Card(
+                  child: Column(
+                    children: [
+                      ListTile(
+                        leading: const Icon(Icons.place_outlined),
+                        title: Text(
+                          messages.circuitLabel,
+                          style: theme.textTheme.labelLarge,
+                        ),
+                        subtitle: Text(messages.circuitName(race.name)),
+                      ),
+                      const Divider(indent: 16, endIndent: 16),
+                      ListTile(
+                        leading: const Icon(Icons.calendar_today_outlined),
+                        title: Text(
+                          messages.raceDateLabel,
+                          style: theme.textTheme.labelLarge,
+                        ),
+                        subtitle: Text(DateFormat.yMMMMd(locale).format(start)),
+                      ),
+                      const Divider(indent: 16, endIndent: 16),
+                      ListTile(
+                        leading: const Icon(Icons.schedule_outlined),
+                        title: Text(
+                          messages.raceStartLabel,
+                          style: theme.textTheme.labelLarge,
+                        ),
+                        subtitle: Text(
+                          messages.raceTimeWithZone(
+                            DateFormat.jm(locale).format(start),
+                            start.timeZoneName,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TicketPricesCard(
+                  prices: race.ticketPrices,
+                  currency: settings.currency,
+                  locale: locale,
+                ),
+              ],
             ),
-            const SizedBox(height: 8),
-            TicketPricesCard(
-              prices: race.ticketPrices,
-              currency: settings.currency,
-              locale: locale,
-            ),
-          ],
+          ),
         ),
       ),
     );
